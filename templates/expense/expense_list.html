@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {{ request.user }}
+        <a href="{% url 'logout' %}">LOGOUT</a>
+    {% else %}
+        <a href="{% url 'login' %}">LOGIN</a>
+    {% endif %}
+    <ul>
+        <li><a href="#">SELECT year</a></li>
+    </ul>
+    <ul>
+        <li><a href="#">SELECT month</a></li>
+    </ul>
+    <ul>
+        <li><a href="#">Add Purchase</a></li>
+{#        <li><a href="{% url 'upload_bill' %}">Upload Bill</a></li>#}
+        <li><a href="#">Chart</a></li>
+    </ul>
+{% endblock %}

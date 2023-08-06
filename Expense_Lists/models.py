@@ -20,10 +20,10 @@ class Expense(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,
                              blank=True)
     # type = models.CharField(max_length=100)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=False,
-                             blank=False)
-    shop = models.ForeignKey(Shop, on_delete=models.CASCADE, null=False,
-                             blank=False)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True,
+                                blank=True)
+    shop = models.ForeignKey(Shop, on_delete=models.CASCADE, null=True,
+                             blank=True)
     cost = models.IntegerField()
     date = models.DateField()
     description = models.TextField(null=True, blank=True)
